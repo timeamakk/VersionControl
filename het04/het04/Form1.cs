@@ -99,12 +99,31 @@ namespace het04
 
             }
 
-            
+            Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, headers.Length));
+            headerRange.Font.Bold = true;
+            headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            headerRange.EntireColumn.AutoFit();
+            headerRange.RowHeight = 40;
+            headerRange.Interior.Color = Color.LightBlue;
+            headerRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
 
+            int lastRowID = xlSheet.UsedRange.Rows.Count;
+
+              Excel.Range bRange = xlSheet.get_Range(GetCell(1, 1), GetCell(lastRowID, headers.Length))  ;
+            bRange.BorderAround2(Excel.XlLineStyle.xlContinuous, Excel.XlBorderWeight.xlThick);
+            Excel.Range cRange= xlSheet.get_Range(GetCell(2, 1), GetCell(lastRowID, 1) ) ;
+            cRange.Interior.Color = Color.LightYellow;
+            cRange.Font.Bold = true;
+
+            Excel.Range dRange = xlSheet.get_Range(GetCell(headers.Length, 1), GetCell(lastRowID, 1)); ;
+            dRange.Interior.Color = Color.LightGreen;
+            
 
 
         }
 
+     
 
         private string GetCell(int x, int y)
         {
