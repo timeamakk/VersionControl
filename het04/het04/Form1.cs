@@ -73,6 +73,11 @@ namespace het04
                 "Ár(mFt)", "Négyzetméter ár(Ft/ m2)"    };
 
 
+            for (int i = 0; i < headers.Length; i++)
+            {
+                xlSheet.Cells[1, i+1] = headers[i];
+            }
+
             
             object[,] values = new object[Flats.Count, headers.Length];
 
@@ -89,7 +94,7 @@ namespace het04
                 values[count, 5] = f.NumberOfRooms;
                 values[count, 6] = f.FloorArea;
                 values[count, 7] = f.Price;
-                values[count, 8] = " ";
+                values[count, 8] =( (f.Price/f.FloorArea)*1000000);
                 count++;
 
                 xlSheet.get_Range( 
@@ -116,7 +121,7 @@ namespace het04
             cRange.Interior.Color = Color.LightYellow;
             cRange.Font.Bold = true;
 
-            Excel.Range dRange = xlSheet.get_Range(GetCell(headers.Length, 1), GetCell(lastRowID, 1)); ;
+            Excel.Range dRange = xlSheet.get_Range(GetCell(2, headers.Length), GetCell(lastRowID, headers.Length)); ;
             dRange.Interior.Color = Color.LightGreen;
             
 
