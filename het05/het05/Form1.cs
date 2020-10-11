@@ -22,7 +22,7 @@ namespace het05
             Ticks = context.Ticks.ToList();
             dataGridView1.DataSource = Ticks;
 
-            List<Tick> l = context.Ticks.ToList();
+            List<Tick> listTick = context.Ticks.ToList();
         }
     }
 }
