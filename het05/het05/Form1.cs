@@ -26,6 +26,7 @@ namespace het05
 
             Ticks = context.Ticks.ToList();
             dataGridView1.DataSource = Ticks;
+
             List<Tick> l = context.Ticks.ToList();
 
             List<decimal> Nyereségek = new List<decimal>();
@@ -52,9 +53,10 @@ namespace het05
 
             MessageBox.Show(nyereségekRendezve[nyereségekRendezve.Count()/5].ToString());
 
+
             CreatePortfolio();
 
-
+        
         }
 
         private void CreatePortfolio()
@@ -90,8 +92,23 @@ namespace het05
                 StreamWriter sw = new StreamWriter(sfd.FileName);
 
                sw.Write("Időszak");
+               sw.Write(";");
                sw.Write("Nyereség");
-                   
+                sw.Write(";");
+                sw.WriteLine();
+
+                int n = 0;
+                foreach (var p in Portfolio)
+                {
+                    sw.Write(n.ToString());
+                    sw.Write(";");
+                    sw.Write(p.Index);
+
+                    sw.WriteLine();
+                }
+
+                
+                sw.Close();
             }
         }
 
