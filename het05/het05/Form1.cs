@@ -27,6 +27,20 @@ namespace het05
             dataGridView1.DataSource = Ticks;
 
             List<Tick> listTick = context.Ticks.ToList();
+
+            CreatePortfolio();
         }
+
+        private void CreatePortfolio()
+        {
+            Portfolio.Add(new PortfolioItem() { Index = "OTP", Volume = 10 });
+            Portfolio.Add(new PortfolioItem() { Index = "Zwack", Volume = 10 });
+            Portfolio.Add(new PortfolioItem() { Index = "ELMU", Volume = 10 });
+
+            dataGridView2.DataSource = Portfolio;
+        }
+
+
+
     }
 }
