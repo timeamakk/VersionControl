@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,11 +26,7 @@ namespace het05
 
             Ticks = context.Ticks.ToList();
             dataGridView1.DataSource = Ticks;
-
             List<Tick> l = context.Ticks.ToList();
-
-            
-
 
             List<decimal> Nyereségek = new List<decimal>();
 
@@ -39,22 +36,25 @@ namespace het05
             DateTime záróDátum = new DateTime(2016, 12, 30);
             TimeSpan z = záróDátum-kezdőDátum;
 
-            for (int i=0; i < z.Days-intervalum; i++)
-            {
-                decimal ny = GetPortfolioValue(kezdőDátum.AddDays(i + intervalum))
-                           - GetPortfolioValue(kezdőDátum.AddDays(i));
-                Nyereségek.Add(ny);
-                Console.WriteLine(i + " " + ny);
-            }
 
-            var nyereségekRendezve = (from x in Nyereségek
-                                      orderby x
-                                      select x).ToList();
+                for (int i=0; i < z.Days-intervalum; i++)
+                {
+                    decimal ny = GetPortfolioValue(kezdőDátum.AddDays(i + intervalum))
+                               - GetPortfolioValue(kezdőDátum.AddDays(i));
+                    Nyereségek.Add(ny);
+                    Console.WriteLine(i + " " + ny);
+                }
+
+                var nyereségekRendezve = (from x in Nyereségek
+                                          orderby x
+                                          select x).ToList();
 
 
             MessageBox.Show(nyereségekRendezve[nyereségekRendezve.Count()/5].ToString());
 
             CreatePortfolio();
+
+
         }
 
         private void CreatePortfolio()
@@ -80,6 +80,21 @@ namespace het05
             }
             return value;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog()==DialogResult.OK)  
+            {
+                StreamWriter sw = new StreamWriter(sfd.FileName);
+
+               sw.Write("Időszak");
+               sw.Write("Nyereség");
+                   
+            }
+        }
+
 
 
 
