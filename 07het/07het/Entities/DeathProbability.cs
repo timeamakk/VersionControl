@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace _07het.Entities
 {
-    class DeathProbability
+    public class DeathProbability
     {
         public Gender Gender { get; set; }
         public int Age { get; set; }
 
-        public double Dprobability { get; set; }
+        public double Deathprobability { get; set; }
     }
 }
