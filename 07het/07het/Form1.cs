@@ -32,6 +32,7 @@ namespace _07het
             Population = GetPopulation(@"C:\Temp\nép.csv");
 
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
+
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
 
         }
@@ -85,28 +86,31 @@ namespace _07het
         }
 
 
-        public List<DeathProbabilities> GetDeathProbabilities (string csvpath)
+        public List<DeathProbability> GetDeathProbabilities (string csvpath)
         {
-            List<DeathProbabilities> dprobability = new List<DeathProbabilities>();
+            List<DeathProbability> dprobability = new List<DeathProbability>();
 
             using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
             {
                 while (!sr.EndOfStream)
                 {
                     var line = sr.ReadLine().Split(';');
-                    dprobability.Add(new DeathProbabilities()
+                    dprobability.Add(new DeathProbability()
                     {
                         Gender = (Gender)Enum.Parse(typeof(Gender), line[0]),
                         Age = int.Parse(line[1]),
                         Deathprobability = double.Parse(line[2])
 
-
-                    });
+                    }
+                    );
 
                 }
 
             }
+
+            return dprobability;
         }
+
 
 
 
