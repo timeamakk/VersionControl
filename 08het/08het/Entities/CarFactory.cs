@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _08het.Abstractions
 {
-    public class BallFactory : IToyFactory
+    public class CarFactory : IToyFactory
     {
         public Toy CreateNew()
         {

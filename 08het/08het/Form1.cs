@@ -1,4 +1,5 @@
 ﻿
+using _08het.Abstractions;
 using _08het.Entities;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace _08het
         private void createTimer_Tick(object sender, EventArgs e)
         {
             var ball = Factory.CreateNew();
-            _balls.Add(ball);
+            _balls.Add((Ball)ball);
             ball.Left = -ball.Width;
             mainPanel.Controls.Add(ball);
         }
