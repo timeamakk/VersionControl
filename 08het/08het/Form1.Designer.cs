@@ -36,11 +36,17 @@
             this.btnCar = new System.Windows.Forms.Button();
             this.btnBall = new System.Windows.Forms.Button();
             this.btnColor = new System.Windows.Forms.Button();
+            this.ptnPresent = new System.Windows.Forms.Button();
+            this.btnColorPresent = new System.Windows.Forms.Button();
+            this.btnColorRibbon = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.ptnPresent);
+            this.mainPanel.Controls.Add(this.btnColorRibbon);
+            this.mainPanel.Controls.Add(this.btnColorPresent);
             this.mainPanel.Controls.Add(this.btnColor);
             this.mainPanel.Controls.Add(this.btnBall);
             this.mainPanel.Controls.Add(this.btnCar);
@@ -74,7 +80,7 @@
             // 
             // btnCar
             // 
-            this.btnCar.Location = new System.Drawing.Point(121, 160);
+            this.btnCar.Location = new System.Drawing.Point(104, 119);
             this.btnCar.Name = "btnCar";
             this.btnCar.Size = new System.Drawing.Size(75, 23);
             this.btnCar.TabIndex = 3;
@@ -84,7 +90,7 @@
             // 
             // btnBall
             // 
-            this.btnBall.Location = new System.Drawing.Point(121, 238);
+            this.btnBall.Location = new System.Drawing.Point(104, 190);
             this.btnBall.Name = "btnBall";
             this.btnBall.Size = new System.Drawing.Size(75, 23);
             this.btnBall.TabIndex = 4;
@@ -95,12 +101,42 @@
             // btnColor
             // 
             this.btnColor.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnColor.Location = new System.Drawing.Point(272, 238);
+            this.btnColor.Location = new System.Drawing.Point(206, 190);
             this.btnColor.Name = "btnColor";
-            this.btnColor.Size = new System.Drawing.Size(52, 50);
+            this.btnColor.Size = new System.Drawing.Size(66, 23);
             this.btnColor.TabIndex = 5;
             this.btnColor.UseVisualStyleBackColor = false;
             this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // ptnPresent
+            // 
+            this.ptnPresent.Location = new System.Drawing.Point(104, 263);
+            this.ptnPresent.Name = "ptnPresent";
+            this.ptnPresent.Size = new System.Drawing.Size(75, 23);
+            this.ptnPresent.TabIndex = 6;
+            this.ptnPresent.Text = "PRESENT";
+            this.ptnPresent.UseVisualStyleBackColor = true;
+            this.ptnPresent.Click += new System.EventHandler(this.ptnPresent_Click);
+            // 
+            // btnColorPresent
+            // 
+            this.btnColorPresent.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnColorPresent.Location = new System.Drawing.Point(206, 263);
+            this.btnColorPresent.Name = "btnColorPresent";
+            this.btnColorPresent.Size = new System.Drawing.Size(66, 23);
+            this.btnColorPresent.TabIndex = 5;
+            this.btnColorPresent.UseVisualStyleBackColor = false;
+            this.btnColorPresent.Click += new System.EventHandler(this.btnColor_Click);
+            // 
+            // btnColorRibbon
+            // 
+            this.btnColorRibbon.BackColor = System.Drawing.Color.Honeydew;
+            this.btnColorRibbon.Location = new System.Drawing.Point(291, 263);
+            this.btnColorRibbon.Name = "btnColorRibbon";
+            this.btnColorRibbon.Size = new System.Drawing.Size(66, 23);
+            this.btnColorRibbon.TabIndex = 5;
+            this.btnColorRibbon.UseVisualStyleBackColor = false;
+            this.btnColorRibbon.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // Form1
             // 
@@ -125,6 +161,9 @@
         private System.Windows.Forms.Button btnBall;
         private System.Windows.Forms.Button btnCar;
         private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.Button ptnPresent;
+        private System.Windows.Forms.Button btnColorRibbon;
+        private System.Windows.Forms.Button btnColorPresent;
     }
 }
 

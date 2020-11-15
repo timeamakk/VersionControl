@@ -11,10 +11,13 @@ namespace _08het.Abstractions
     public class PresentFactory : IToyFactory
     {
         public Color PresentColor { get; set; }
+        public Color RibbonColor { get; set; }
+
+        
 
         public Toy CreateNew()
         {
-            return new Present(PresentColor);
+            return new Present(PresentColor, RibbonColor);
         }
 
     }

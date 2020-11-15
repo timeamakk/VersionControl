@@ -98,6 +98,11 @@ namespace _08het
                 return;
             button.BackColor = colorPicker.Color;
         }
+
+        private void ptnPresent_Click(object sender, EventArgs e)
+        {
+            Factory = new PresentFactory { PresentColor = btnColorPresent.BackColor , RibbonColor = btnColorRibbon.BackColor };
+        }
     }
 
 }
