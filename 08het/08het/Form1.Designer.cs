@@ -35,11 +35,13 @@
             this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
             this.btnCar = new System.Windows.Forms.Button();
             this.btnBall = new System.Windows.Forms.Button();
+            this.btnColor = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.btnColor);
             this.mainPanel.Controls.Add(this.btnBall);
             this.mainPanel.Controls.Add(this.btnCar);
             this.mainPanel.Controls.Add(this.lblNext);
@@ -90,6 +92,16 @@
             this.btnBall.UseVisualStyleBackColor = true;
             this.btnBall.Click += new System.EventHandler(this.btnBall_Click);
             // 
+            // btnColor
+            // 
+            this.btnColor.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnColor.Location = new System.Drawing.Point(272, 238);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(52, 50);
+            this.btnColor.TabIndex = 5;
+            this.btnColor.UseVisualStyleBackColor = false;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +124,7 @@
         private System.Windows.Forms.Label lblNext;
         private System.Windows.Forms.Button btnBall;
         private System.Windows.Forms.Button btnCar;
+        private System.Windows.Forms.Button btnColor;
     }
 }
 
