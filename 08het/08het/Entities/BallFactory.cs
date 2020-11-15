@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace _08het.Entities
 {
-    class BallFactory
+    public class BallFactory
     {
-        public Ball CreatNew() {
+        public Ball CreateNew() {
             return new Ball();    
         }  
 
