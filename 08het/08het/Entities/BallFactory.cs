@@ -8,8 +8,8 @@ namespace _08het.Entities
 {
     public class BallFactory
     {
-        public Ball CreateNew() {
-            return new Ball();    
+        public Toy CreateNew() {
+            return new Toy();    
         }  
 
     }
