@@ -11,7 +11,7 @@ namespace _08het.Abstractions
     {
         public Toy CreateNew()
         {
-            return new Ball();
+            return new Car();
         }
 
     }
