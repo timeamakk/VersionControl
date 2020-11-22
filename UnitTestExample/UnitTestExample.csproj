@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="AccountControllerTestFixture.cs" />
     <Compile Include="UnitTestExample\Abstractions\IAccountManager.cs" />
+    <Compile Include="UnitTestExample\AccountControllerRegister.cs" />
     <Compile Include="UnitTestExample\Controllers\AccountController.cs" />
     <Compile Include="UnitTestExample\Entities\Account.cs" />
     <Compile Include="UnitTestExample\Form1.cs">
