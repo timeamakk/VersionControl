@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('packages\NUnit.3.12.0\build\NUnit.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -9,6 +10,8 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,6 +36,9 @@
     <RootNamespace>UnitTestExample</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.12.0\lib\net40\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
@@ -48,6 +54,7 @@
     <None Include=".vs\slnx.sqlite" />
     <None Include=".vs\UnitTestExample\v16\.suo" />
     <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="packages.config" />
     <None Include="UnitTestExample\App.config" />
     <None Include="UnitTestExample\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="UnitTestExample\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
@@ -55,6 +62,7 @@
     <None Include="UnitTestExample\UnitTestExample.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountControllerTestFixture.cs" />
     <Compile Include="UnitTestExample\Abstractions\IAccountManager.cs" />
     <Compile Include="UnitTestExample\Controllers\AccountController.cs" />
     <Compile Include="UnitTestExample\Entities\Account.cs" />
@@ -91,4 +99,10 @@
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
   </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\NUnit.3.12.0\build\NUnit.props'))" />
+  </Target>
 </Project>
