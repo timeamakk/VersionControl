@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+﻿
 using System;
 using System.Activities;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace UnitTestExample.Controllers
             
             var input = password;
             var hasMinChars = new Regex(@".{8,}");
-            var hasOnlyChar = new Regex(@"[a-zA-Z0-9]");
+            var hasOnlChar = new Regex(@"[a-zA-Z0-9]");
             var hasLowerChar = new Regex(@"[a-z]+");
             var hasUpperChar = new Regex(@"[A-Z]+");
             var hasNumber = new Regex(@"[0 - 9] + ");
@@ -65,6 +65,14 @@ namespace UnitTestExample.Controllers
             {
                 return false;
             }
+
+            else if (!hasOnlChar.IsMatch(input))
+            {
+                return false;
+            }
+
+
+
             else if (!hasUpperChar.IsMatch(input))
             {
                 return false;

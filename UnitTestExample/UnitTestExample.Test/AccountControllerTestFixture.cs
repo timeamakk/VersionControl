@@ -29,25 +29,31 @@ namespace UnitTestExample
 
 
 
-        [Test,
+
+
+       [Test,
        TestCase("abcdABCD", false),
        TestCase("Ab1234", false),
        TestCase("abcd1234", false),
        TestCase("ABCD123", false),
        TestCase("Abcd1234", true),]
-        public void TestValidatePassword(string password, bool expectedResult)
+        public void TestValidatePassword(string password, bool expectedResult2)
         {
 
-            var accountController = new AccountController();
-            var actualResult = accountController.ValidatePassword(password);
+            var accountController2 = new AccountController();
+            var actualResult2 = accountController2.ValidatePassword(password);
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult2, actualResult2);
 
         }
 
+          
+        
+        
+        
         [Test,
-           TestCase("irf@uni-corvinus.hu", "Abcd1234"),
-           TestCase("irf@uni-corvinus.hu", "Abcd1234567"),]
+        TestCase("irf@uni-corvinus.hu", "Abcd1234"),
+        TestCase("irf@uni-corvinus.hu", "Abcd1234567"),]
         public void TestRegisterHappyPath(string email, string password)
         {
 
