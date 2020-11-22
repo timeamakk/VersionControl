@@ -11,10 +11,10 @@ namespace UnitTestExample.UnitTestExample
     {
         [Test,
         TestCase("abcdABCD", false),
-        TestCase("ABCD1234", false),
+        TestCase("Ab1234", false),
         TestCase("abcd1234", false),
-        TestCase("abcd123", false),
-        TestCase("abCD1234", true),]
+        TestCase("ABCD123", false),
+        TestCase("Abcd1234", true),]
         public void TestValidateRegister(string password, bool expectedResult)
         {
 
