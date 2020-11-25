@@ -16,6 +16,15 @@ namespace evolucio_10het
 
         GameController gc = new GameController();
         GameArea ga;
+
+
+        int populationSize = 100;
+        int nbrOfSteps = 10;
+        int nbrOfStepsIncrement = 10;
+        int generation = 1;
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +33,9 @@ namespace evolucio_10het
             this.Controls.Add(ga);
             gc.AddPlayer();
             gc.Start(true);
+
+
+
         }
     }
 }
