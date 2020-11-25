@@ -22,7 +22,8 @@ namespace evolucio_10het
 
             ga = gc.ActivateDisplay();
             this.Controls.Add(ga);
-
+            gc.AddPlayer();
+            gc.Start(true);
         }
     }
 }
