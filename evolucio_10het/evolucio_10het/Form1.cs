@@ -35,7 +35,8 @@ namespace evolucio_10het
 
                     gc.GameOver += Gc_GameOver;
 
-                    for (int i = 0; i < populationSize; i++) { gc.AddPlayer(nbrOfSteps); }
+                    for (int i = 0; i < populationSize; i++) 
+                        { gc.AddPlayer(nbrOfSteps); }
 
                     gc.Start();
 
@@ -56,6 +57,7 @@ namespace evolucio_10het
 
             var topPerformers = playerList.Take(populationSize / 2).ToList();
 
+            
             gc.ResetCurrentLevel();
             foreach (var p in topPerformers)
             {
@@ -71,6 +73,10 @@ namespace evolucio_10het
                     gc.AddPlayer(b.Mutate());
             }
 
+
+           
+
+
             var winners = from p in topPerformers
                           where p.IsWinner
                           select p;
@@ -78,10 +84,11 @@ namespace evolucio_10het
             {
                 winnerBrain = winners.FirstOrDefault().Brain.Clone();
                 gc.GameOver -= Gc_GameOver;
+                button1.Visible = true;
                 return;
             }
-            gc.Start();
 
+            gc.Start();
         }
 
 
